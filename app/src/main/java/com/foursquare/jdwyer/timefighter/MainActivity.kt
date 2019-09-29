@@ -18,7 +18,7 @@ class MainActivity : Activity() {
     internal var gameStarted = false
 
     internal lateinit var countDownTimer: CountDownTimer
-    internal val initialCountDown: Long = 6000
+    internal val initialCountDown: Long = 60000
     internal val countDownInterval: Long = 1000
 
 
@@ -30,8 +30,7 @@ class MainActivity : Activity() {
         gameScoreTextView = findViewById(R.id.gameScoreTextView)
         gameTimeTextView = findViewById(R.id.TimeLeftTextView)
 
-        gameScoreTextView.text = getString(R.string.yourScore, score)
-        gameTimeTextView.text = getString(R.string.timeLeft, score)
+        resetGame()
 
         tapMeButton.setOnClickListener {_ ->
             incrementScore()
